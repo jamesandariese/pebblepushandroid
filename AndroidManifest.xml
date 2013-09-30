@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="net.strudelline.pebblepush"
+          android:versionCode="1"
+          android:versionName="1.0"
+          android:installLocation="internalOnly">
+    <uses-sdk android:minSdkVersion="10"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <application android:label="@string/app_name">
+        <activity android:name="PebblePushSetup"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name=".PebblePushPauser">
+            <intent-filter>
+                <action android:name="com.getpebble.action.PEBBLE_CONNECTED" />
+                <action android:name="com.getpebble.action.PEBBLE_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".PebblePushService" />
+        <receiver android:name=".PebblePushStarter">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest> 

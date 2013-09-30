@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Pebble Push Setup"
+            />
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:text="Pebble Push will connect to the pebblepush server using the User ID below.  This entire string should be considered your userid and password so ensure you don't share it and that it is both unique and very random."
+            android:id="@+id/description" android:layout_weight="2"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User ID"
+            android:id="@+id/textView" android:layout_gravity="center"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText" android:singleLine="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/button" android:layout_gravity="right|center_vertical"/>
+</LinearLayout>
+
